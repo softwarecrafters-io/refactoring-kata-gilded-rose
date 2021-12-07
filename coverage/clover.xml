@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1638879403005" clover="3.2.0">
-  <project timestamp="1638879403005" name="All files">
-    <metrics statements="32" coveredstatements="32" conditionals="35" coveredconditionals="34" methods="3" coveredmethods="3" elements="70" coveredelements="69" complexity="0" loc="32" ncloc="32" packages="1" files="1" classes="1"/>
+<coverage generated="1638906784181" clover="3.2.0">
+  <project timestamp="1638906784182" name="All files">
+    <metrics statements="41" coveredstatements="41" conditionals="42" coveredconditionals="39" methods="5" coveredmethods="5" elements="88" coveredelements="85" complexity="0" loc="41" ncloc="41" packages="1" files="1" classes="1"/>
     <file name="gilded-rose.ts" path="/Users/miguel/Dropbox/Cursos/fullstackTDD/workspace/gilded-rose/src/core/gilded-rose.ts">
-      <metrics statements="32" coveredstatements="32" conditionals="35" coveredconditionals="34" methods="3" coveredmethods="3"/>
+      <metrics statements="41" coveredstatements="41" conditionals="42" coveredconditionals="39" methods="5" coveredmethods="5"/>
       <line num="1" count="1" type="stmt"/>
-      <line num="7" count="2652" type="stmt"/>
-      <line num="8" count="2652" type="stmt"/>
-      <line num="9" count="2652" type="stmt"/>
+      <line num="7" count="2653" type="stmt"/>
+      <line num="8" count="2653" type="stmt"/>
+      <line num="9" count="2653" type="stmt"/>
       <line num="13" count="1" type="stmt"/>
-      <line num="17" count="1" type="stmt"/>
-      <line num="21" count="1" type="stmt"/>
-      <line num="22" count="2652" type="cond" truecount="4" falsecount="0"/>
-      <line num="23" count="1326" type="cond" truecount="2" falsecount="0"/>
-      <line num="24" count="1300" type="cond" truecount="2" falsecount="0"/>
-      <line num="25" count="650" type="stmt"/>
-      <line num="29" count="1326" type="cond" truecount="2" falsecount="0"/>
-      <line num="30" count="1300" type="stmt"/>
-      <line num="31" count="1300" type="cond" truecount="2" falsecount="0"/>
-      <line num="32" count="650" type="cond" truecount="2" falsecount="0"/>
-      <line num="33" count="600" type="cond" truecount="2" falsecount="0"/>
-      <line num="34" count="588" type="stmt"/>
-      <line num="37" count="650" type="cond" truecount="2" falsecount="0"/>
-      <line num="38" count="350" type="cond" truecount="2" falsecount="0"/>
-      <line num="39" count="336" type="stmt"/>
-      <line num="45" count="2652" type="cond" truecount="2" falsecount="0"/>
-      <line num="46" count="1989" type="stmt"/>
-      <line num="48" count="2652" type="cond" truecount="2" falsecount="0"/>
-      <line num="49" count="357" type="cond" truecount="2" falsecount="0"/>
-      <line num="50" count="255" type="cond" truecount="2" falsecount="0"/>
-      <line num="51" count="153" type="cond" truecount="2" falsecount="0"/>
-      <line num="52" count="148" type="cond" truecount="2" falsecount="0"/>
-      <line num="53" count="98" type="stmt"/>
-      <line num="57" count="102" type="stmt"/>
-      <line num="60" count="102" type="cond" truecount="2" falsecount="0"/>
-      <line num="61" count="98" type="stmt"/>
-      <line num="67" count="1" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="18" count="2653" type="stmt"/>
+      <line num="21" count="2" type="stmt"/>
+      <line num="25" count="2653" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="663" type="cond" truecount="2" falsecount="0"/>
+      <line num="27" count="650" type="stmt"/>
+      <line num="29" count="663" type="stmt"/>
+      <line num="30" count="663" type="cond" truecount="2" falsecount="0"/>
+      <line num="31" count="102" type="cond" truecount="2" falsecount="0"/>
+      <line num="32" count="98" type="stmt"/>
+      <line num="37" count="1990" type="cond" truecount="2" falsecount="0"/>
+      <line num="38" count="663" type="cond" truecount="2" falsecount="0"/>
+      <line num="39" count="650" type="stmt"/>
+      <line num="40" count="650" type="cond" truecount="2" falsecount="0"/>
+      <line num="41" count="600" type="cond" truecount="2" falsecount="0"/>
+      <line num="42" count="588" type="stmt"/>
+      <line num="45" count="650" type="cond" truecount="2" falsecount="0"/>
+      <line num="46" count="350" type="cond" truecount="2" falsecount="0"/>
+      <line num="47" count="336" type="stmt"/>
+      <line num="51" count="663" type="stmt"/>
+      <line num="52" count="663" type="cond" truecount="2" falsecount="0"/>
+      <line num="53" count="102" type="stmt"/>
+      <line num="57" count="1327" type="cond" truecount="2" falsecount="0"/>
+      <line num="58" count="663" type="cond" truecount="2" falsecount="0"/>
+      <line num="62" count="663" type="cond" truecount="2" falsecount="0"/>
+      <line num="63" count="51" type="cond" truecount="2" falsecount="0"/>
+      <line num="69" count="664" type="cond" truecount="2" falsecount="0"/>
+      <line num="70" count="650" type="cond" truecount="1" falsecount="1"/>
+      <line num="71" count="650" type="stmt"/>
+      <line num="74" count="664" type="cond" truecount="1" falsecount="1"/>
+      <line num="75" count="664" type="stmt"/>
+      <line num="77" count="664" type="cond" truecount="2" falsecount="0"/>
+      <line num="78" count="103" type="cond" truecount="2" falsecount="0"/>
+      <line num="79" count="98" type="cond" truecount="1" falsecount="1"/>
+      <line num="80" count="98" type="stmt"/>
     </file>
   </project>
 </coverage>
