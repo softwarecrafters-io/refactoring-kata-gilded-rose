@@ -10,10 +10,15 @@ export class Item {
 	}
 }
 
-export class StandardItem {
-	protected constructor(protected name: string, protected sellIn: number, protected quality: number) {}
+export interface InventoryItem {
+	doUpdateQuality(): void;
+	toString(): string;
+}
 
-	static createFrom(item:Item){
+export class StandardItem implements InventoryItem{
+	private constructor(private name: string, private sellIn: number, private quality: number) {}
+
+	static createFrom(item:Item):InventoryItem{
 		switch (item.name) {
 			case 'Aged Brie':
 				return new AgedBrie('Aged Brie', item.sellIn, item.quality)
@@ -27,14 +32,20 @@ export class StandardItem {
 	}
 
 	doUpdateQuality() {
+		this.decreaseQuality();
+		this.decreaseSellIn();
+		if (this.sellIn < 0) {
+			this.decreaseQuality()
+		}
+	}
+
+	private decreaseSellIn() {
+		this.sellIn = this.sellIn - 1;
+	}
+
+	private decreaseQuality() {
 		if (this.quality > 0) {
 			this.quality = this.quality - 1;
-		}
-		this.sellIn = this.sellIn - 1;
-		if (this.sellIn < 0) {
-			if (this.quality > 0) {
-				this.quality = this.quality - 1;
-			}
 		}
 	}
 
@@ -47,44 +58,91 @@ export class StandardItem {
 	}
 }
 
-class AgedBrie extends StandardItem{
+class AgedBrie implements InventoryItem{
+	constructor(private name: string, private sellIn: number, private quality: number) {}
+
 	doUpdateQuality() {
+		this.increaseQuality();
+		this.decreaseQuality();
+		if (this.sellIn < 0) {
+			this.increaseQuality()
+		}
+	}
+
+	private decreaseQuality() {
+		this.sellIn = this.sellIn - 1;
+	}
+
+	private increaseQuality() {
 		if (this.quality < 50) {
 			this.quality = this.quality + 1;
 		}
-		this.sellIn = this.sellIn - 1;
-		if (this.sellIn < 0) {
-			if (this.quality < 50) {
-				this.quality = this.quality + 1;
-			}
-		}
+	}
+
+	toString(){
+		return `
+		Name: ${this.name} 
+		Sell in:${this.sellIn} 
+		Quality: ${this.quality}
+		`
 	}
 }
 
-class BackstagePass extends StandardItem{
+class BackstagePass implements InventoryItem{
+	constructor(private name: string, private sellIn: number, private quality: number) {}
+
 	doUpdateQuality() {
-		if (this.quality < 50) {
-			this.quality = this.quality + 1;
-			if (this.sellIn < 11) {
-				if (this.quality < 50) {
-					this.quality = this.quality + 1;
-				}
-			}
-			if (this.sellIn < 6) {
-				if (this.quality < 50) {
-					this.quality = this.quality + 1;
-				}
-			}
+		const maxQuality = 50;
+		if (this.quality < maxQuality) {
+			this.increaseQuality();
+			this.increaseQualityBy(11, maxQuality);
+			this.increaseQualityBy(6, maxQuality);
 		}
-		this.sellIn = this.sellIn - 1;
+		this.decreaseSellIn();
+		this.decreaseQuality();
+	}
+
+	private increaseQualityBy(sellIn :number,  quality :number) {
+		if (this.sellIn < sellIn && this.quality < quality) {
+			this.increaseQuality();
+		}
+	}
+
+	private decreaseQuality() {
 		if (this.sellIn < 0) {
-			this.quality = this.quality - this.quality;
+			this.quality = 0;
 		}
+	}
+
+	private decreaseSellIn() {
+		this.sellIn = this.sellIn - 1;
+	}
+
+	private increaseQuality() {
+		this.quality = this.quality + 1;
+	}
+
+	toString(){
+		return `
+		Name: ${this.name} 
+		Sell in:${this.sellIn} 
+		Quality: ${this.quality}
+		`
 	}
 }
 
-class Sulfuras extends StandardItem{
+class Sulfuras implements InventoryItem{
+	constructor(private name: string, private sellIn: number, private quality: number) {}
+
 	doUpdateQuality() {}
+
+	toString(){
+		return `
+		Name: ${this.name} 
+		Sell in:${this.sellIn} 
+		Quality: ${this.quality}
+		`
+	}
 }
 
 export class GildedRose {
