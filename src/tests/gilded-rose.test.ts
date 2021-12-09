@@ -1,8 +1,8 @@
-import { Item, GildedRose } from '../core/gilded-rose';
+import { Item, GildedRose, StandardItem } from '../core/gilded-rose';
 
 describe('The Gilded Rose', () => {
 	it('updates quality for a new item', () => {
-		const gildedRose = new GildedRose([new Item('new item', 0, 0)]);
+		const gildedRose = new GildedRose([StandardItem.createFrom(new Item('new item', 0, 0))]);
 
 		const items = gildedRose.updateQuality();
 
@@ -18,7 +18,7 @@ describe('The Gilded Rose', () => {
 
 		const updatedItems = gildedRose.updateQuality();
 
-		expect(updatedItems).toMatchSnapshot();
+		expect(updatedItems.map(item => item.toString())).toMatchSnapshot();
 	});
 });
 
@@ -26,7 +26,7 @@ function generateCombinationOfItemsFrom(names:string[], sellinDays: number[], qu
 	return names.flatMap(
 		name => sellinDays.flatMap(
 			sellin => qualities.flatMap(
-				quality => new Item(name, sellin, quality))))
+				quality => StandardItem.createFrom(new Item(name, sellin, quality)))))
 }
 
 function range(from:number, length:number): number[] {
