@@ -146,7 +146,7 @@ class Sulfuras implements InventoryItem{
 }
 
 export class GildedRose {
-	constructor(public items: Array<StandardItem>) {}
+	constructor(public items: InventoryItem[]) {}
 
 	updateQuality() {
 		this.items.forEach(item => {

@@ -1,4 +1,4 @@
-import { Item, GildedRose, StandardItem } from '../core/gilded-rose';
+import { Item, GildedRose, StandardItem } from '../core/gildedRose';
 
 describe('The Gilded Rose', () => {
 	it('updates quality for a new item', () => {
