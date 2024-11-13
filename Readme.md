@@ -1,4 +1,4 @@
-# Kata Gilded Rose
+# Refactoring Kata Gilded Rose
 
 ## Refactoring Sostenible - Técnicas para mantener el Legacy Code bajo control
 
